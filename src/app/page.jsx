@@ -1,33 +1,28 @@
-'use client'
-
-import React, { useState, useEffect, } from 'react';
 import { GitBranch } from 'lucide-react';
 import { FloatingParticles } from "@/components/FloatingParticles";
 import { TypewriterText } from "@/components/TypewriterText";
 import { EntryCard } from "@/components/EntryCard";
+import Link from 'next/link'
 
 export default function Home() {
     const projects = [
         {
-            title: "Linear Regression Engine",
-            description: "Built from scratch using pure NumPy - no sklearn shortcuts. Includes gradient descent optimization, feature scaling, and comprehensive performance analysis.",
-            tech: ["Python", "NumPy", "Matplotlib", "Pandas"],
-            status: "active",
-            liveUrl: true
+            title: "Titanic EDA",
+            description: "Análisis exploratorio completo (EDA) del dataset del Titanic para investigar los factores que influyeron en la supervivencia de los pasajeros.",
+            tags: ["EDA", "Seaborn", "NumPy", "Matplotlib", "Pandas"],
+            url: "/docs/UT1/P01/"
         },
         {
-            title: "Neural Network Framework",
-            description: "Custom deep learning framework with automatic differentiation. Supports multiple activation functions, optimizers, and loss functions.",
-            tech: ["Python", "CUDA", "PyTorch", "TensorBoard"],
-            status: "active",
-            liveUrl: true
+            title: "Feature Engineering",
+            description: "Feature engineering con pipeline completo de machine learning para predecir la supervivencia de pasajeros del Titanic.",
+            tags: ["Logistic Regression", "Classifier", "Scikit", "Pandas"],
+            url: "/docs/UT1/P02/"
         },
         {
-            title: "Time Series Forecaster",
-            description: "LSTM-based cryptocurrency price prediction with real-time data ingestion. Features advanced preprocessing and ensemble methods.",
-            tech: ["PyTorch", "Redis", "WebSockets", "Docker"],
-            status: "development",
-            liveUrl: false
+            title: "Linear Regression - Housing Prices",
+            description: "Implementación de un modelo de regresión lineal para predecir precios de viviendas utilizando el dataset de Boston Housing.",
+            tags: ["Linear Regression", "Scikit", "Pandas", "Matplotlib", "Numpy"],
+            url: "/docs/UT1/P04_1/"
         }
     ];
 
@@ -48,7 +43,7 @@ export default function Home() {
                     <div className="max-w-3xl mx-auto">
                         <div className="text-xl md:text-2xl text-gray-200  text-left">
                             <TypewriterText
-                                text="Building the future with neural networks and data science"
+                                text="My journey through Introduction to Machine Learning - projects, exercises, and notes"
                                 speed={40}
                             />
                         </div>
@@ -66,13 +61,15 @@ export default function Home() {
                             <GitBranch className="w-8 h-8 text-purple-400" />
                         </h2>
                         <div className="text-xl text-gray-200 hover:text-purple-400 cursor-pointer transition-colors">
-                            View all →
+                            <a href="/docs">View all → </a>
                         </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {projects.map((project, index) => (
-                            <EntryCard key={index} {...project} />
+                            <Link key={index} href={project.url} passHref>
+                                <EntryCard {...project} />
+                            </Link>
                         ))}
                     </div>
                 </div>
