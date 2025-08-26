@@ -2,7 +2,7 @@
 
 import { ExternalLink, Play, Code } from 'lucide-react';
 
-export const EntryCard = ({ title, description, tech, liveUrl }) => (
+export const EntryCard = ({ title, description, tags, liveUrl }) => (
     <div className="bg-gray-900/10 backdrop-blur-sm border-2 border-b-gray-100 p-6 hover:border-purple-400 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20 group">
         <div className="flex items-start justify-between mb-4">
             <div className="flex items-center gap-3">
@@ -20,7 +20,7 @@ export const EntryCard = ({ title, description, tech, liveUrl }) => (
         <p className="text-gray-200 mb-4 leading-relaxed">{description}</p>
 
         <div className="flex flex-wrap gap-2 mb-4">
-            {tech.map((t, i) => (
+            {tags.map((t, i) => (
                 <span key={i} className="px-2 py-1 bg-purple-500/10 text-purple-400 text-sm border border-purple-500">
           {t}
         </span>
