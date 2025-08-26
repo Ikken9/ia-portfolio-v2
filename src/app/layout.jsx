@@ -1,12 +1,11 @@
 import { Footer, Layout, Navbar } from 'nextra-theme-docs'
 import { ThemeProvider } from 'next-themes'
-import { Banner, Head } from 'nextra/components'
+import { Head } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
 import { Fira_Code } from "next/font/google"
 import Image from 'next/image';
 import './globals.css'
 import Link from 'next/link'
-
 
 const firaCode = Fira_Code({
     weight: ["300", "400", "500", "600", "700"],
@@ -28,8 +27,6 @@ export const viewport = {
     width: "device-width",
     initialScale: 1,
 }
-
-const banner = <Banner storageKey="ml-portfolio-banner">Welcome to my Portfolio!</Banner>
 
 const navbar = (
     <Navbar
@@ -101,7 +98,6 @@ export default async function RootLayout({ children }) {
         <body suppressHydrationWarning>
         <ThemeProvider forcedTheme="dark" attribute="class"></ThemeProvider>
         <Layout
-            banner={banner}
             navbar={navbar}
             pageMap={await getPageMap()}
             docsRepositoryBase="https://github.com/Ikken9/ia-portfolio/tree/main/docs"
