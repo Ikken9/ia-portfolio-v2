@@ -41,7 +41,7 @@ export default function Home() {
                     </div>
 
                     <div className="max-w-3xl mx-auto">
-                        <div className="text-xl md:text-2xl text-gray-200  text-left">
+                        <div className="text-xl md:text-2xl text-gray-200  text-center">
                             <TypewriterText
                                 text="My journey through Introduction to Machine Learning - projects, exercises, and notes"
                                 speed={40}
