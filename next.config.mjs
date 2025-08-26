@@ -5,12 +5,9 @@ const withNextra = nextra({
 });
 
 const nextConfig = {
-    basePath: process.env.GITHUB_REPOSITORY ? '/' + process.env.GITHUB_REPOSITORY.split('/')[1] : '',
-    assetPrefix: process.env.GITHUB_REPOSITORY ? '/' + process.env.GITHUB_REPOSITORY.split('/')[1] + '/' : '',
+    basePath: process.env.PAGES_BASE_PATH ? process.env.PAGES_BASE_PATH : '',
     output: "export",
-    trailingSlash: true,
     images: { unoptimized: true },
-    distDir: "out",
     async redirects() {
         return []
     },
