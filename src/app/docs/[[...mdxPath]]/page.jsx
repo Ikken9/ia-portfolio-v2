@@ -308,10 +308,7 @@ export default async function DocsPage({ params }) {
                             <div className="space-y-2">
                                 {files
                                     .filter(f => f.category === category)
-                                    .sort(
-                                        (a, b) =>
-                                            new Date(b.lastModified) - new Date(a.lastModified)
-                                    )
+                                    .sort((a, b) => a.name.localeCompare(b.name))
                                     .map(file => (
                                         <Link
                                             key={file.path}
