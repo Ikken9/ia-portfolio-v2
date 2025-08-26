@@ -5,7 +5,7 @@ const withNextra = nextra({
 });
 
 const nextConfig = {
-    basePath: process.env.PAGES_BASE_PATH ? process.env.PAGES_BASE_PATH : '',
+    basePath: process.env.REPOSITORY_NAME ? '/' + process.env.REPOSITORY_NAME : '',
     output: "export",
     images: { unoptimized: true },
     async redirects() {
