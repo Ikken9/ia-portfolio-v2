@@ -96,21 +96,22 @@ export default async function RootLayout({ children }) {
         <html lang="en" dir="ltr" suppressHydrationWarning>
         <Head />
         <body suppressHydrationWarning>
-        <ThemeProvider forcedTheme="dark" attribute="class"></ThemeProvider>
-        <Layout
-            navbar={navbar}
-            pageMap={await getPageMap()}
-            docsRepositoryBase="https://github.com/Ikken9/ia-portfolio/tree/main/docs"
-            footer={footer}
-            editLink={
-                <a href="https://github.com/Ikken9/ia-portfolio">
-                    View this page on GitHub
-                </a>
-            }
-            darkMode={false}
-        >
-            {children}
-        </Layout>
+        <ThemeProvider forcedTheme="dark" attribute="class">
+            <Layout
+                navbar={navbar}
+                pageMap={await getPageMap()}
+                docsRepositoryBase="https://github.com/Ikken9/ia-portfolio/tree/main/docs"
+                footer={footer}
+                editLink={
+                    <a href="https://github.com/Ikken9/ia-portfolio">
+                        View this page on GitHub
+                    </a>
+                }
+                darkMode={false}
+            >
+                {children}
+            </Layout>
+        </ThemeProvider>
         </body>
         </html>
     )
