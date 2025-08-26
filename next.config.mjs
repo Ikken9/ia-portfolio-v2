@@ -5,6 +5,7 @@ const withNextra = nextra({
 });
 
 const nextConfig = {
+    basePath: process.env.PAGES_BASE_PATH,
     output: "export",
     trailingSlash: true,
     images: { unoptimized: true },
