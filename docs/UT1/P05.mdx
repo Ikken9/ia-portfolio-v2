@@ -1,0 +1,42 @@
+---
+description: Selecting and Validating models
+tags: ["Cross Validation", "K-Fold", "Random Forest", "Data Leakage"]
+---
+
+# Práctica 05
+- **Propuesta:** https://juanfkurucz.com/ucu-ia/ut1/05-validacion-seleccion-modelos/
+- **Link colab:** https://colab.research.google.com/drive/1cFAjRmqcqu3bhxJ3nNQphKIY2vYG0RR-?usp=sharing
+
+
+## Objetivos
+- Aprender a prevenir data leakage usando pipelines
+- Implementar validación cruzada (cross-validation) robusta
+- Comparar múltiples modelos de forma sistemática
+- Interpretar métricas de estabilidad y selección de modelos
+
+### ¿Qué es data leakage y por qué es peligroso?
+Es cuando el modelo tiene acceso, directa o indirectamente, a información del conjunto de prueba o a variables que no
+debería conocer durante el entrenamiento. En la práctica, el modelo falla en datos reales porque nunca tuvo que
+generalizar bien.
+
+Causa resultados demasiado optimistas en validación.
+
+### ¿Cuándo usar KFold vs StratifiedKFold?
+**KFold** divide los datos en *k*-partes sin preocuparse de la proporción de clases. Esto es útil cuando las clases
+están bien balanceadas.
+
+**StratifiedKFold** mantiene la misma proporción de clases en cada fold y se usa cuando hay clases desbalanceadas
+(por ejemplo, 5% de pacientes enfermos y 95% sanos). Además evita que un fold quede sin ejemplos de la clase minoritaria.
+
+### ¿Cómo interpretar "95.2% ± 2.1%" en cross-validation?
+El modelo, en promedio, acierta el 95.2% de las veces y el rendimiento varía entre folds por un 2.1%. Un valor pequeño
+indica consistencia/estabilidad.
+
+### ¿Por qué Random Forest no necesita StandardScaler?
+Porque Random Forest no usa distancia ni magnitudes absolutas de las variables, solo compara umbrales de
+división (ej: "¿X > 3.5?"), entonces no importa si una variable está en cm, mm o metros, al final el escalado no afecta
+al resultado.
+
+### En diagnóstico médico, ¿prefieres un modelo con 98% accuracy pero inestable, o 95% accuracy pero muy estable?
+Prefiero el 95% estable, porque en diagnóstico médico la confiabilidad es más importante que el rendimiento máximo
+aislado.
