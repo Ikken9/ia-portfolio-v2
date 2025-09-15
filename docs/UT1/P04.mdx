@@ -31,7 +31,7 @@ StratifiedKFold (5 folds) para la validación.
 En los resultados Random Forest obtiene el mayor accuracy promedio (0.7658), superando por un margen pequeño a Logistic
 Regression (0.7618).
 
-Todos los modelos presentan desviaciones estándar bajas (<0.01), lo que indica alta consistencia entre los folds.
+Todos los modelos presentan desviaciones estándar bajas (&lt;0.01), lo que indica alta consistencia entre los folds.
 
 Ridge Classifier es el más estable (±0.0032), aunque con menor accuracy.
 
@@ -64,7 +64,7 @@ indica consistencia/estabilidad.
 
 **¿Por qué Random Forest no necesita StandardScaler?**
 Porque Random Forest no usa distancia ni magnitudes absolutas de las variables, solo compara umbrales de
-división (ej: "¿X > 3.5?"), entonces no importa si una variable está en cm, mm o metros, al final el escalado no afecta
+división (ej: "¿X &gt; 3.5?"), entonces no importa si una variable está en cm, mm o metros, al final el escalado no afecta
 al resultado.
 
 **En diagnóstico médico, ¿prefieres un modelo con 98% accuracy pero inestable, o 95% accuracy pero muy estable?**
