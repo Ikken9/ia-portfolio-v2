@@ -1,9 +1,9 @@
 ---
+title: "Práctica 03 - Parte 2"
 description: Logistic Regression - Breast Cancer
 tags: ["Logistic Regression", "Scikit", "Pandas", "Matplotlib", "Numpy"]
 ---
 
-# Práctica 03 - Parte 2
 La segunda parte de la práctica consiste en construir un modelo de Logistic Regression tomando un dataset de
 Breast Cancer, y evaluar al modelo utilizando ciertas métricas obtenidas luego del entreno.
 
@@ -18,6 +18,7 @@ Breast Cancer, y evaluar al modelo utilizando ciertas métricas obtenidas luego 
 ## Análisis y Resultados
 Datos de entrenamiento: 455 pacientes
 Datos de prueba: 114 pacientes
+<br></br>
 
 Las métricas de evaluación obtenidas luego de entrenar y probar el modelo son:
 - **Accuracy:** 0.956 (95.6%)
@@ -53,22 +54,23 @@ Las 5 primeras predicciones fueron:
 **Paciente 5:** Real: Benigno *vs* Predicho: Benigno
 
 ### Algunas preguntas
-**1. ¿Cuál es la diferencia principal entre regresión lineal y logística?**
+#### **1. ¿Cuál es la diferencia principal entre regresión lineal y logística?**
 La Regresión Lineal produce valores numéricos continuos (como los precios de casas en el primer caso), mientras que
 regresión logística produce categorías o clases discretas (como benigno/maligno).
+<br></br>
 
 En resumen, la lineal predice cantidades, la logística clasifica en grupos.
 
-**2. ¿Por qué dividimos los datos en entrenamiento y prueba?**
+#### **2. ¿Por qué dividimos los datos en entrenamiento y prueba?**
 Para evaluar cómo se desempeñará el modelo con datos nuevos y no vistos. Si se usaran todos los datos para entrenar y
 evaluar, el modelo podría sufrir *overfitting* como vimos en clase y no generalizar bien a nuevos casos. El split ayuda
 a medir la capacidad de generalización real del modelo.
 
-**3. ¿Qué significa una exactitud del 95%?**
+#### **3. ¿Qué significa una exactitud del 95%?**
 Significa que de cada 100 pacientes, el modelo acertaría en 95 y se equivocaría en 5. Es decir, tiene una tasa de
 acierto del 95% en la clasificación.
 
-**4. ¿Cuál es más peligroso: predecir "benigno" cuando es "maligno", o al revés?**
+#### **4. ¿Cuál es más peligroso: predecir "benigno" cuando es "maligno", o al revés?**
 Es MUCHO más peligroso predecir "benigno" cuando es "maligno" (falso negativo).
-
+<br></br>
 En medicina, generalmente se prioriza minimizar los falsos negativos en diagnósticos de enfermedades graves.
