@@ -6,10 +6,14 @@ const withNextra = nextra({
 
 const isProd = process.env.NODE_ENV === 'production';
 
+console.log('NODE_ENV:', process.env.NODE_ENV);
+console.log('isProd:', isProd);
+console.log('basePath will be:', isProd ? '/ia-portfolio' : '');
+
 const nextConfig = {
     staticImage: true,
     basePath: isProd ? '/ia-portfolio' : '',
-    assetPrefix: isProd ? '/ia-portfolio/' : '',
+    assetPrefix: isProd ? '/ia-portfolio' : '',
     output: "export",
     trailingSlash: true,
     images: {
