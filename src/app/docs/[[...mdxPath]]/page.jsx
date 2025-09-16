@@ -12,7 +12,7 @@ import {
     User,
     ChevronRight
 } from 'lucide-react'
-import remarkGfm from 'remark-gfm'   // 🔹 ADD THIS
+import remarkGfm from 'remark-gfm'
 
 /* -------------------------------
    Shared MDX Components
@@ -25,10 +25,13 @@ const components = {
         />
     ),
     h2: props => (
-        <h2 className="text-3xl font-bold mb-4 mt-8 text-purple-300" {...props} />
+        <h2 className="text-3xl font-bold mb-3 mt-8 text-purple-300" {...props} />
     ),
     h3: props => (
-        <h3 className="text-2xl font-bold mb-3 mt-6 text-purple-200" {...props} />
+        <h3 className="text-2xl font-bold mb-1 mt-7 text-white" {...props} />
+    ),
+    h4: props => (
+        <h4 className="text-xl font-bold mb-1 mt-7 text-white" {...props} />
     ),
     p: props => (
         <p className="mb-4 text-gray-300 leading-relaxed" {...props} />
@@ -336,10 +339,10 @@ export default async function DocsPage({ params }) {
                                                     {/*        <span>{file.metadata.tags}</span>*/}
                                                     {/*    </div>*/}
                                                     {/*)}*/}
-                                                    <div className="flex items-center gap-1">
-                                                        <Calendar className="w-3 h-3" />
-                                                        <span>{formatDate(file.lastModified)}</span>
-                                                    </div>
+                                                    {/*<div className="flex items-center gap-1">*/}
+                                                    {/*    <Calendar className="w-3 h-3" />*/}
+                                                    {/*    <span>{formatDate(file.lastModified)}</span>*/}
+                                                    {/*</div>*/}
                                                     <span>{formatFileSize(file.size)}</span>
                                                     <ChevronRight className="w-4 h-4 group-hover:text-purple-400 transition-colors" />
                                                 </div>
@@ -385,10 +388,10 @@ export default async function DocsPage({ params }) {
                         )}
 
                         <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
-                            <div className="flex items-center gap-2">
-                                <Calendar className="w-4 h-4" />
-                                <span>{formatDate(stats.mtime)}</span>
-                            </div>
+                            {/*<div className="flex items-center gap-2">*/}
+                            {/*    <Calendar className="w-4 h-4" />*/}
+                            {/*    <span>{formatDate(stats.mtime)}</span>*/}
+                            {/*</div>*/}
 
                             <div className="flex items-center gap-2">
                                 <Clock className="w-4 h-4" />
