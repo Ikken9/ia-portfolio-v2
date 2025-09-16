@@ -1,7 +1,7 @@
 import nextra from "nextra";
 
 const withNextra = nextra({
-
+    staticImage: true,
 });
 
 const isProd = process.env.NODE_ENV === 'production';
@@ -11,7 +11,6 @@ console.log('isProd:', isProd);
 console.log('basePath will be:', isProd ? '/ia-portfolio' : '');
 
 const nextConfig = {
-    staticImage: true,
     basePath: isProd ? '/ia-portfolio' : '',
     assetPrefix: isProd ? '/ia-portfolio' : '',
     output: "export",
