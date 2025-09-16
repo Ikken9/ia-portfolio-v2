@@ -6,8 +6,10 @@ const withNextra = nextra({
 
 const nextConfig = {
     staticImage: true,
-    basePath: process.env.GITHUB_REPOSITORY ? '/' + process.env.GITHUB_REPOSITORY.split('/')[1] : '',
+    basePath: process.env.NODE_ENV === 'production' ? '/ia-portfolio' : '',
+    assetPrefix: process.env.NODE_ENV === 'production' ? '/ia-portfolio' : '',
     output: "export",
+    trailingSlash: true,
     images: { unoptimized: true },
     async redirects() {
         return []
