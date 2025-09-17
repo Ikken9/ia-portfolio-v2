@@ -29,8 +29,8 @@ const nextConfig = {
     images: {
         unoptimized: true
     },
-    async redirects() {
-        return []
+    env: {
+        NEXT_PUBLIC_BASE_PATH: basePath, // Make basePath available to client-side
     },
     webpack: (config) => {
         config.module.rules.push(
