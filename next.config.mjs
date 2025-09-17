@@ -21,7 +21,7 @@ const nextConfig = {
         unoptimized: true
     },
     env: {
-        NEXT_PUBLIC_BASE_PATH: basePath, // Make basePath available to client-side
+        NEXT_PUBLIC_BASE_PATH: isProd ? `/${repoName}` : '', // Make basePath available to client-side
     },
     webpack: (config) => {
         config.module.rules.push(
