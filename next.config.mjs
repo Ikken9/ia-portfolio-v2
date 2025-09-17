@@ -10,7 +10,7 @@ const nextConfig = {
     output: "export",
     trailingSlash: true,
     images: {
-        unoptimized: true // GitHub Pages does not support Next.js image optimization
+        unoptimized: true
     },
     async redirects() {
         return []
