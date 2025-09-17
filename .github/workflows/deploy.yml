@@ -49,6 +49,14 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+
+      - name: Print NODE_ENV via shell
+        run: echo "NODE_ENV=$NODE_ENV"
+
       - name: Restore cache
         uses: actions/cache@v4
         with:
