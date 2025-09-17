@@ -9,8 +9,7 @@ const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
 const isProd = process.env.NODE_ENV === 'production' || isGitHubActions;
 
 // Extract repo name from GITHUB_REPOSITORY (format: "owner/repo-name")
-const repoName = process.env.GITHUB_REPOSITORY ?
-    process.env.GITHUB_REPOSITORY.split('/')[1] : 'ia-portfolio';
+const repoName = process.env.GITHUB_REPOSITORY ? process.env.GITHUB_REPOSITORY.split('/')[1] : 'ia-portfolio';
 
 const nextConfig = {
     basePath: isProd ? `/${repoName}` : '',
