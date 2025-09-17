@@ -57,17 +57,17 @@ Y los rangos observados son:
 <br></br>
 
 ### Distribuciones de Variables Clave
-![distribuciones](/p05_1.png)
+<img src={`/${process.env.GITHUB_REPOSITORY.split('/')[1]  + '' || ''}/p05_1.png`} alt="distribuciones" />
 
 <br></br>
 
 ### Relaciones Entre Variables
-![relaciones](/p05_2.png)
+<img src={`/${process.env.GITHUB_REPOSITORY.split('/')[1]  + '' || ''}/p05_2.png`} alt="relaciones" />
 
 <br></br>
 
 ### Matriz de Correlación - Mall Customers
-![matriz](/p05_3.png)
+<img src={`/${process.env.GITHUB_REPOSITORY.split('/')[1]  + '' || ''}/p05_3.png`} alt="matriz" />
 
 Aquí puede observarse que la relación más fuerte es entre **Annual Income (k$)** y **Spending Score (1-100)**, con un
 score de 0.010
@@ -102,7 +102,7 @@ de determinar el scaler más adecuado, tres son utilizados y comparados:
 - **StandardScaler**
 - **RobustScaler**
 
-![scalers](/p05_4.png)
+<img src={`/${process.env.GITHUB_REPOSITORY.split('/')[1]  + '' || ''}/p05_4.png`} alt="scalers" />
 
 <br></br>
 
@@ -110,7 +110,7 @@ Como los datos ahora están normalizados, es esperable un cambio en la forma de 
 siguiente gráfico muestra una comparación de las diferentes distribuciones según el scaler utilizado, sobre la variable
 **Annual Income**:
 
-![scalers_annual_income](/p05_5.png)
+<img src={`/${process.env.GITHUB_REPOSITORY.split('/')[1]  + '' || ''}/p05_5.png`} alt="scalers-annual-income" />
 
 <br></br>
 
@@ -140,12 +140,12 @@ explicada, pero para visualización se eligen 2 componentes porque no es posible
 <br></br>
 
 #### Varianza
-![varianza](/p05_6.png)
+<img src={`/${process.env.GITHUB_REPOSITORY.split('/')[1]  + '' || ''}/p05_6.png`} alt="varianza" />
 
 <br></br>
 
 #### Mall Customers en Espacio PCA 2D
-![varianza_componentes](/p05_7.png)
+<img src={`/${process.env.GITHUB_REPOSITORY.split('/')[1]  + '' || ''}/p05_7.png`} alt="varianza-componentes" />
 
 <br></br>
 
@@ -173,7 +173,7 @@ En total se comparan 4; Baseline, Forward Selection, Backward Selection y PCA (2
 - PCA (2D): 0.686
 
 #### Comparación de Métodos de Feature Selection
-![comparación](/p05_8.png)
+<img src={`/${process.env.GITHUB_REPOSITORY.split('/')[1]  + '' || ''}/p05_8.png`} alt="comparacion" />
 
 El PCA (2D) es el que tiene más score, por lo tanto es el más adecuado para usar.
 
@@ -186,7 +186,7 @@ Para encontrar el **K** óptimo se utiliza el Elbow Method junto con Silhouette 
 <br></br>
 
 #### Elbow Method - Silhouette Analysis
-![elbow_silhouette](/p05_9.png)
+<img src={`/${process.env.GITHUB_REPOSITORY.split('/')[1]  + '' || ''}/p05_9.png`} alt="elbow-silhouette" />
 
 <br></br>
 
@@ -248,5 +248,5 @@ Tras elegir K, se entrena el modelo final de K-Means, se asignan las etiquetas d
 - Spending Score: 70.2/100
 
 ### Clustering
-![clustering](/p05_10.png)
+<img src={`/${process.env.GITHUB_REPOSITORY.split('/')[1]  + '' || ''}/p05_10.png`} alt="clustering" />
 
