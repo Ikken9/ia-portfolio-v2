@@ -54,6 +54,11 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
 
+      - name: Print all environment variables
+        run: |
+          echo "Listing all environment variables:"
+          env
+
       - name: Print NODE_ENV via shell
         run: echo "NODE_ENV=$NODE_ENV"
 
