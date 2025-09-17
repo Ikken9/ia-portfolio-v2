@@ -4,9 +4,26 @@ const withNextra = nextra({
     staticImage: true,
 });
 
+// Use GitHub Actions environment or NODE_ENV
+const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
+const isProd = process.env.NODE_ENV === 'production' || isGitHubActions;
+
+// Extract repo name from GITHUB_REPOSITORY (format: "owner/repo-name")
+const repoName = process.env.GITHUB_REPOSITORY ?
+    process.env.GITHUB_REPOSITORY.split('/')[1] : 'ia-portfolio';
+
+const basePath = isProd ? `/${repoName}` : '';
+
+console.log('NODE_ENV:', process.env.NODE_ENV);
+console.log('GITHUB_ACTIONS:', process.env.GITHUB_ACTIONS);
+console.log('GITHUB_REPOSITORY:', process.env.GITHUB_REPOSITORY);
+console.log('repoName:', repoName);
+console.log('isProd:', isProd);
+console.log('basePath will be:', basePath);
+
 const nextConfig = {
-    basePath: process.env.NODE_ENV === 'production' ? '/ia-portfolio' : '',
-    assetPrefix: process.env.NODE_ENV === 'production' ? '/ia-portfolio' : '',
+    basePath: basePath,
+    assetPrefix: basePath,
     output: "export",
     trailingSlash: true,
     images: {
