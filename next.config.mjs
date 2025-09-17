@@ -12,18 +12,9 @@ const isProd = process.env.NODE_ENV === 'production' || isGitHubActions;
 const repoName = process.env.GITHUB_REPOSITORY ?
     process.env.GITHUB_REPOSITORY.split('/')[1] : 'ia-portfolio';
 
-const basePath = isProd ? `/${repoName}` : '';
-
-console.log('NODE_ENV:', process.env.NODE_ENV);
-console.log('GITHUB_ACTIONS:', process.env.GITHUB_ACTIONS);
-console.log('GITHUB_REPOSITORY:', process.env.GITHUB_REPOSITORY);
-console.log('repoName:', repoName);
-console.log('isProd:', isProd);
-console.log('basePath will be:', basePath);
-
 const nextConfig = {
-    basePath: basePath,
-    assetPrefix: basePath,
+    basePath: isProd ? `/${repoName}` : '',
+    assetPrefix: isProd ? `/${repoName}/` : '/',
     output: "export",
     trailingSlash: true,
     images: {
